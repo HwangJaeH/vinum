@@ -1,3 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+	//String includePage = request.getParameter("includePage");
+    String includePage = (String)request.getAttribute("includePage");
+    if(includePage== null){
+    	includePage ="welcome.jsp";
+    }
+%>
+ <%@ taglib  prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%> 
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,21 +22,26 @@
     <link rel="stylesheet" href="/layouts/pricing/styles.css">
     <link href="${pageContext.request.contextPath}/user/board/css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
 
+<body>
+<jsp:include page="./userinterface/header/header.jsp"/> 
+
+<jsp:include page="<%=includePage %>"></jsp:include>
 <div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading">Your Logo</a>
+    <a href="#" class="pure-menu-heading">
+    	<img src = "images/Logo.jpg" width = "300" height = "50"/>
+    </a>
     <ul class="pure-menu-list">
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-        <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Pricing</a></li>
+        <li class="pure-menu-item pure-menu-selected"><a href="./user/login/loginpage.jsp" class="pure-menu-link">Login</a></li>
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
     </ul>
 </div>
 
 <div class="banner">
     <h1 class="banner-head">
-        Simple Pricing.<br>
-        Try before you buy.
+        당신의 와인을 추천해드립니다<br>
+        
     </h1>
 </div>
 
@@ -33,69 +50,64 @@
         <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-free">
                 <div class="pricing-table-header">
-                    <h2>Personal</h2>
+                	
+                    <h2></h2>
 
                     <span class="pricing-table-price">
-                        $5 <span>per month</span>
-                    </span>
+                         <span>나만의 추천와인
+                         찾기</span>
+                    </span> 
                 </div>
 
                 <ul class="pricing-table-list">
-                    <li>Free setup</li>
-                    <li>Custom sub-domain</li>
-                    <li>Standard customer support</li>
-                    <li>1GB file storage</li>
-                    <li>1 database</li>
-                    <li>Unlimited bandwidth</li>
+                    <li>맛,도수 등을 통해 회원님에게 </br>
+                    맞는 와인을 추천해드립니다</li>
+                    
                 </ul>
 
-                <button class="button-choose pure-button">Choose</button>
+                <button class="button-choose pure-button">CLICK!</button>
             </div>
         </div>
 
         <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-biz pricing-table-selected">
-                <div class="pricing-table-header">
-                    <h2>Small Business</h2>
+                <div class="pricing-table-header" float:right;>
+                	
+                    <h2></h2>
 
                     <span class="pricing-table-price">
-                        $25 <span>per month</span>
+                        <span> 와인 검색하기</span>
                     </span>
                 </div>
 
                 <ul class="pricing-table-list">
-                    <li>Free setup</li>
-                    <li>Use your own domain</li>
-                    <li>Standard customer support</li>
-                    <li>10GB file storage</li>
-                    <li>5 databases</li>
-                    <li>Unlimited bandwidth</li>
+                    <li>다양한 종류의 와인을 </br>
+                    찾아보세요 !
+                    </li>
+                    
                 </ul>
 
-                <button class="button-choose pure-button">Choose</button>
+                <button class="button-choose pure-button">CLICK!</button>
             </div>
         </div>
 
         <div class="pure-u-1 pure-u-md-1-3">
             <div class="pricing-table pricing-table-enterprise">
                 <div class="pricing-table-header">
-                    <h2>Enterprise</h2>
+                    <h2></h2>
 
                     <span class="pricing-table-price">
-                        $45 <span>per month</span>
+                         <span>추천식당 보기</span>
                     </span>
                 </div>
 
                 <ul class="pricing-table-list">
-                    <li>Free setup</li>
-                    <li>Use your own domain</li>
-                    <li>Premium customer support</li>
-                    <li>Unlimited file storage</li>
-                    <li>25 databases</li>
-                    <li>Unlimited bandwidth</li>
+                    <li>Vinum이 추천하는 </br>
+                    와인가게 !</li>
+                    
                 </ul>
 
-                <button class="button-choose pure-button">Choose</button>
+                <button class="button-choose pure-button">CLICK!</button>
             </div>
         </div>
     </div> <!-- end pricing-tables -->
@@ -141,11 +153,13 @@
     </div> <!-- end information -->
 </div> <!-- end l-content -->
 
-<div class="footer l-box">
+<!-- <div class="footer l-box">
     <p>
         <a href="#">Try now</a> for 14 days. No credit card required. Header image courtesy of <a href='http://unsplash.com/'>Unsplash</a>.
     </p>
-</div>
+</div> -->
+
+<%-- <jsp:include page="./userinterface/footer/footer.jsp"/> --%>
 
 </body>
 </html>
