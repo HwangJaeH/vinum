@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib  prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +16,16 @@
 </head>
 <body>
 
-<div class="pure-menu pure-menu-horizontal">
+<!-- <div class="pure-menu pure-menu-horizontal" id="header" name="header">
     <a href="#" class="pure-menu-heading">Your Logo</a>
     <ul class="pure-menu-list">
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
         <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Pricing</a></li>
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
     </ul>
-</div>
+</div> -->
+
+<jsp:include page="./userinterface/header/header.jsp"/>
 
 <div class="banner">
     <h1 class="banner-head">
@@ -141,11 +147,12 @@
     </div> <!-- end information -->
 </div> <!-- end l-content -->
 
-<div class="footer l-box">
+<!-- <div class="footer l-box">
     <p>
         <a href="#">Try now</a> for 14 days. No credit card required. Header image courtesy of <a href='http://unsplash.com/'>Unsplash</a>.
     </p>
-</div>
+</div> -->
+<jsp:include page="./userinterface/footer/footer.jsp"/>
 
 </body>
 </html>
